@@ -7,7 +7,7 @@ $user = $_SESSION['user'];
 
 if(!empty($_POST)) {
   $filename = basename($_FILES["file"]["name"]);
-  $file_uploaded = move_uploaded_file($filename, "/home/mauricio.fossas/users/$user/$filename");
+  $file_uploaded = move_uploaded_file($_FILES["file"]["tmp_name"], "/home/mauricio.fossas/users/$user/$filename");
 }
 
 // Get a list of files for the user
