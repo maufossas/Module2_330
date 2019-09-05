@@ -1,0 +1,17 @@
+table, th, td {border: 1px solid black; 
+    text-align: center;}
+table {border-collapse: separate;}
+td {background-color:rgb(255,218,185); 
+    font-size: 30px;}
+th {background-color: rgb(128, 0, 0); 
+    font-size: 45px;
+    color: rgb(255,218,185);}
+input[type="number"]{height: 12px;}
+input[type="submit"] {border: none;
+    color:rgb(128, 0, 0);
+    background-color: rgb(255,218,185);
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;}
+input[type="radio"] {cursor: grabbing;}
