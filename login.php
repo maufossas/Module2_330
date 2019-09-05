@@ -1,14 +1,14 @@
 <?php
 session_start();
-$users = file_get_contents("/home/mauricio.fossas/users/users.txt");
-//$users = "dane";
+//$users = file_get_contents("/home/mauricio.fossas/users/users.txt");
+$users = "dane";
 $userArray = preg_split("/\n/", $users);
 $_SESSION['loggedIn'] = false;
 if (!empty($_POST)) {
   foreach($userArray as $user){
     if ($user == htmlspecialchars($_POST["user"])){
       $_SESSION['loggedIn'] = true;
-      header("Location: /files.php");
+      header("Location: ./files.php");
     }
   }
 }
