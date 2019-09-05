@@ -4,6 +4,12 @@ if (!$_SESSION['loggedIn']) {
   header("Location: ./login.php");
 }
 $user = $_SESSION['user'];
+
+if(!empty($_POST)) {
+  $filename = basename($_FILES["file"]["name"]);
+  move_uploaded_file($filename, "/home/mauricio.fossas/users/$user/$filename");
+}
+
 // Get a list of files for the user
 // Slice off . and ..
 $files = array_slice(scandir("/home/mauricio.fossas/users/$user"), 2);
@@ -11,6 +17,10 @@ $files = array_slice(scandir("/home/mauricio.fossas/users/$user"), 2);
 <!DOCTYPE html>
 <html>
   <body>
+    <form action=<?php echo $_SERVER["PHP_SELF"];?> method="POST">
+      <input type="file" name="file">
+      <input type="submit">
+    </form>
     <ul>
       <?php
       foreach($files as $file) {
