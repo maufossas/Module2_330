@@ -8,6 +8,7 @@ if (!empty($_POST)) {
   foreach($userArray as $user){
     if ($user == htmlspecialchars($_POST["user"])){
       $_SESSION['loggedIn'] = true;
+      $_SESSION['user'] = $user;
       header("Location: ./files.php");
     }
   }
