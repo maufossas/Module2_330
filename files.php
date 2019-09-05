@@ -7,7 +7,7 @@ $user = $_SESSION['user'];
 
 if(!empty($_POST)) {
   $filename = basename($_FILES["file"]["name"]);
-  move_uploaded_file($filename, "/home/mauricio.fossas/users/$user/$filename");
+  $file_uploaded = move_uploaded_file($filename, "/home/mauricio.fossas/users/$user/$filename");
 }
 
 // Get a list of files for the user
@@ -21,6 +21,11 @@ $files = array_slice(scandir("/home/mauricio.fossas/users/$user"), 2);
       <input type="file" name="file">
       <input type="submit">
     </form>
+    <?php
+    if (!$file_uploaded) {
+      echo "Failed to upload file.";
+    }
+    ?>
     <ul>
       <?php
       foreach($files as $file) {
