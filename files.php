@@ -14,7 +14,7 @@ $files = array_slice(scandir("/home/mauricio.fossas/users/$user"), 2);
     <ul>
       <?php
       foreach($files as $file) {
-        echo "<li>$file</li>";
+        echo "<li><a href=\"./view.php?user=$user&name=$file\">$file</a></li>";
       }
       ?>
     </ul>
