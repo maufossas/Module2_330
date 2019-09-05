@@ -1,6 +1,6 @@
 <?php
 session_start();
-$users = file_get_contents("/var/simplefileserver/users/users.txt");
+$users = file_get_contents("/var/simplefileserver/users.txt");
 //$users = "dane";
 $userArray = preg_split("/\n/", $users);
 $_SESSION['loggedIn'] = false;

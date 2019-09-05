@@ -7,13 +7,13 @@ $user = $_SESSION['user'];
 
 if(!empty($_POST)) {
   $filename = basename($_FILES["file"]["name"]);
-  $destination = "/var/simplefileserver/users/$user/$filename";
+  $destination = "/var/simplefileserver/$user/$filename";
   $file_uploaded = move_uploaded_file($_FILES["file"]["tmp_name"], $destination); 
 } 
 
 // Get a list of files for the user
 // Slice off . and ..
-$files = array_slice(scandir("/var/simplefileserver/users/$user"), 2);
+$files = array_slice(scandir("/var/simplefileserver/$user"), 2);
 ?>
 <!DOCTYPE html>
 <html>
