@@ -7,25 +7,21 @@ $user = $_SESSION['user'];
 
 if(!empty($_POST)) {
   $filename = basename($_FILES["file"]["name"]);
-  $file_uploaded = move_uploaded_file($_FILES["file"]["tmp_name"], "/home/mauricio.fossas/users/$user/$filename");
-}
+  $destination = "/var/simplefileserver/users/$user/$filename";
+  $file_uploaded = move_uploaded_file($_FILES["file"]["tmp_name"], $destination); 
+} 
 
 // Get a list of files for the user
 // Slice off . and ..
-$files = array_slice(scandir("/home/mauricio.fossas/users/$user"), 2);
+$files = array_slice(scandir("/var/simplefileserver/users/$user"), 2);
 ?>
 <!DOCTYPE html>
 <html>
   <body>
-    <form action=<?php echo $_SERVER["PHP_SELF"];?> method="POST">
+    <form action=<?php echo $_SERVER["PHP_SELF"];?> method="POST" enctype="multipart/form-data">
       <input type="file" name="file">
-      <input type="submit">
+      <input type="submit" name="upload">
     </form>
-    <?php
-    if (!$file_uploaded) {
-      echo "Failed to upload file.";
-    }
-    ?>
     <ul>
       <?php
       foreach($files as $file) {
