@@ -9,7 +9,7 @@ if(!empty($_POST)) {
   $filename = basename($_FILES["file"]["name"]);
   $destination = "/var/simplefileserver/$user/$filename";
   $file_uploaded = move_uploaded_file($_FILES["file"]["tmp_name"], $destination); 
-} 
+}
 
 // Get a list of files for the user
 // Slice off . and ..
@@ -22,6 +22,11 @@ $files = array_slice(scandir("/var/simplefileserver/$user"), 2);
       <input type="file" name="file">
       <input type="submit" name="upload">
     </form>
+    <?php
+    if (!$file_uploaded) {
+      echo "Failed to upload file. Destination was $destination";
+    }
+    ?>
     <ul>
       <?php
       foreach($files as $file) {
