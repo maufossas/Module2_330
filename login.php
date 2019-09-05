@@ -1,7 +1,7 @@
 <?php
 session_start();
-//$users = file_get_contents("/home/mauricio.fossas/users/users.txt");
-$users = "dane";
+$users = file_get_contents("/home/mauricio.fossas/users/users.txt");
+//$users = "dane";
 $userArray = preg_split("/\n/", $users);
 $_SESSION['loggedIn'] = false;
 if (!empty($_POST)) {
