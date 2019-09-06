@@ -11,7 +11,7 @@ function makeDelete($file) {
   echo "<li>
 <form action=" . $_SERVER['PHP_SELF'] . " method=post>
 <input type=hidden name=file value=$file>
-<a href=\"./view.php?user=$user&amp;name=$file\">$file</a>
+<a href=\"./view.php?name=$file\">$file</a>
 <input type=submit name=action value=Delete>
 </form>
 </li>";
