@@ -17,10 +17,7 @@ if (!empty($_POST)) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>File_sharing</title>
-    <link href="StyleSheetModule2.css" rel="stylesheet" type="text/css"/>
-  </head>
+  <?php include "./header.php" ?>
   <body>
     <form action=<?php echo $_SERVER["PHP_SELF"];?> method="POST">
       Enter username: <input type="text", name="user">

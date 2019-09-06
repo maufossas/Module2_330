@@ -36,6 +36,7 @@ $files = array_slice(scandir("/var/simplefileserver/$user"), 2);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+  <?php include "./header.php" ?>
   <body>
     <a href="./login.php">Logout</a>
     <form action=<?php echo $_SERVER["PHP_SELF"];?> method="POST" enctype="multipart/form-data">
