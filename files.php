@@ -1,11 +1,5 @@
 <?php
-session_start();
-if (!$_SESSION['loggedIn']) {
-  header("Location: ./login.php");
-}
-global $user;
-$user = $_SESSION['user'];
-
+require "./guard.php";
 function makeDelete($file) {
   global $user;
   echo "<li>
