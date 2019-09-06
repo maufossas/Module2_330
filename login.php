@@ -1,9 +1,10 @@
 <?php
+// Cleanup session variables
 session_start();
-$users = file_get_contents("/var/simplefileserver/users.txt");
-//$users = "dane";
-$userArray = preg_split("/\n/", $users);
 $_SESSION['loggedIn'] = false;
+unset($_SESSION['user']);
+$users = file_get_contents("/var/simplefileserver/users.txt");
+$userArray = preg_split("/\n/", $users);
 if (!empty($_POST)) {
   foreach($userArray as $user){
     if ($user == htmlspecialchars($_POST["user"])){

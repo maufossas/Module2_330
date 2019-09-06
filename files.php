@@ -37,6 +37,7 @@ $files = array_slice(scandir("/var/simplefileserver/$user"), 2);
 <!DOCTYPE html>
 <html lang="en">
   <body>
+    <a href="./login.php">Logout</a>
     <form action=<?php echo $_SERVER["PHP_SELF"];?> method="POST" enctype="multipart/form-data">
       <input type="file" name="file">
       <input type="submit" name="action" value="Upload">
