@@ -15,7 +15,7 @@ if (!empty($_POST)) {
 }
 ?>
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
   <head>
     <title>File_sharing</title>
     <link href="StyleSheetModule2.css" rel="stylesheet" type="text/css"/>

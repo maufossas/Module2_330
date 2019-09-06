@@ -16,7 +16,7 @@ if(!empty($_POST)) {
 $files = array_slice(scandir("/var/simplefileserver/$user"), 2);
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <body>
     <form action=<?php echo $_SERVER["PHP_SELF"];?> method="POST" enctype="multipart/form-data">
       <input type="file" name="file">
