@@ -8,9 +8,11 @@ $userArray = preg_split("/\n/", $users);
 if (!empty($_POST)) {
   foreach($userArray as $user){
     if ($user == htmlspecialchars($_POST["user"])){
+      // We've found a user
       $_SESSION['loggedIn'] = true;
       $_SESSION['user'] = $user;
       header("Location: ./files.php");
+      break;
     }
   }
 }

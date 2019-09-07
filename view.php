@@ -2,6 +2,8 @@
 require "./guard.php";
 $filename = htmlspecialchars($_GET['name']);
 $file = "/var/simplefileserver/$user/$filename";
+// We display different file types differently. Find out the
+// type and make a decision here
 switch(mime_content_type($file)) {
   case "text/plain":
     $filetype = "text";
