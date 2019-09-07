@@ -9,6 +9,10 @@ function makeDelete($file) {
 <a href=\"./view.php?name=$file\">$file</a>
 <input type=submit name=action value=Delete>
 </form>
+<form action=\"./ixio.php\" method=post>
+<input type=hidden name=file value=$file>
+<input type=submit name=paste value=\"Upload to ix.io\">
+</form>
 </li>";
 }
 
