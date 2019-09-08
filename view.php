@@ -14,6 +14,17 @@ switch(pathinfo($file, PATHINFO_EXTENSION)) {
   case "mp3":
     $filetype = "audio";
     break;
+  case "csv":
+    $filetype = "csv";
+    $fin = fopen($file, "r");
+    $rows = array();
+    $row = fgetcsv($fin);
+    while($row != FALSE) {
+      $rows[] = $row;
+      $row = fgetcsv($fin);
+    }
+    fclose($fin);
+    break;
   default:
     $filetype = "unknown";
 }
@@ -22,13 +33,25 @@ switch(pathinfo($file, PATHINFO_EXTENSION)) {
 <html>
   <?php require "./header.php" ?>
   <?php if ($filetype == "text") { ?>
-    <pre><?php echo file_get_contents($file); ?></pre>
+    <pre><?php echo htmlspecialchars(file_get_contents($file)); ?></pre>
   <?php } elseif($filetype == "image") { ?>
       <img src="image.php?name=<?php echo $filename ?>" />
   <?php } elseif($filetype == "audio") { ?>
         <audio controls>
           <source src="<?php echo "./audio.php?name=$filename" ?>" type="audio/mp3">
         </audio>
+  <?php } elseif($filetype == "csv") { ?>
+        <table>
+          <?php
+          foreach($rows as $row) {
+            echo "<tr>";
+            foreach($row as $col) {
+              $val = htmlspecialchars($col);
+              echo "<td>$val</td>";
+            }
+            echo "</tr>";
+        }?>
+        </table>
   <?php } else { ?>
     <p>Sorry, we cannot open this type of file.</p>
   <?php }
