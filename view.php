@@ -31,9 +31,9 @@ switch(pathinfo($file, PATHINFO_EXTENSION)) {
 ?>
 <!DOCTYPE html>
 <html>
+  <?php require "./header.php" ?>
 <body>
 <div class="border">
-  <?php require "./header.php" ?>
   <?php if ($filetype == "text") { ?>
     <pre><?php echo htmlspecialchars(file_get_contents($file)); ?></pre>
   <?php } elseif($filetype == "image") { ?>

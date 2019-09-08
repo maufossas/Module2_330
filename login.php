@@ -22,7 +22,7 @@ if (!empty($_POST)) {
   <?php include "./header.php" ?>
   <body>
     <form action=<?php echo $_SERVER["PHP_SELF"];?> method="POST">
-      <label>Enter username: <input type="text", name="user"> </label>
+      <label>Enter username: <input type="text" name="user"> </label>
       <input type="submit">
     </form>
   </body>
