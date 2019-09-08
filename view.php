@@ -31,6 +31,8 @@ switch(pathinfo($file, PATHINFO_EXTENSION)) {
 ?>
 <!DOCTYPE html>
 <html>
+<body>
+<div class="border">
   <?php require "./header.php" ?>
   <?php if ($filetype == "text") { ?>
     <pre><?php echo htmlspecialchars(file_get_contents($file)); ?></pre>
@@ -56,4 +58,6 @@ switch(pathinfo($file, PATHINFO_EXTENSION)) {
     <p>Sorry, we cannot open this type of file.</p>
   <?php }
   ?>
+  </div>
+  </body>
 </html>

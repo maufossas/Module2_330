@@ -11,7 +11,22 @@ input[type="submit"] {border: none;
     color:rgb(128, 0, 0);
     background-color: rgb(255,218,185);
     padding: 16px 32px;
+    margin: 4px 2px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14pt;}
+input[type="file"] {border: none;
+    color:yellow;
+    background-color: blue;
+    padding: 16px 32px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;}
+input[type="text"]{font-size: 24pt;}
 input[type="radio"] {cursor: grabbing;}
+div.border{border-style: solid;
+    border-color: rgb(255,218,185);}
+form.inline{display: inline-block;}
+ul {list-style-type: circle;}
+a {font-size: 24pt;}
+label{font-size: 24pt;}
