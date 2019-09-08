@@ -3,17 +3,21 @@ require "./guard.php";
 
 function makeDelete($file) {
   global $user;
+  $ext = pathinfo($file, PATHINFO_EXTENSION);
   echo "<li>
 <form action=" . $_SERVER['PHP_SELF'] . " method=post>
 <input type=hidden name=file value=$file>
 <a href=\"./view.php?name=$file\">$file</a>
 <input type=submit name=action value=Delete>
 </form>
-<form action=\"./ixio.php\" method=post>
+";
+  if ($ext == 'txt' or $ext == 'mp3' or $ext == 'csv'){
+    echo "<form action=\"./ixio.php\" method=post>
 <input type=hidden name=file value=$file>
 <input type=submit name=paste value=\"Upload to ix.io\">
-</form>
-</li>";
+</form>";
+  }
+  echo"</li>";
 }
 
 $file_uploaded = true;
