@@ -7,7 +7,7 @@ $users = file_get_contents("/var/simplefileserver/users.txt");
 $userArray = preg_split("/\n/", $users);
 if (!empty($_POST)) {
   foreach($userArray as $user){
-    if ($user == htmlspecialchars($_POST["user"])){
+    if ($user == htmlspecialchars($_POST["user"]) and $user != ""){
       // We've found a user
       $_SESSION['loggedIn'] = true;
       $_SESSION['user'] = $user;
