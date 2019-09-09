@@ -56,7 +56,15 @@ switch(pathinfo($file, PATHINFO_EXTENSION)) {
         }?>
         </table>
   <?php } else { ?>
-    <p>Sorry, we cannot open this type of file.</p>
+    <?php if( !preg_match('/^[\w_\.\-]+$/', $filename) ){
+	          echo "Invalid filename";
+	          exit;
+          }
+          else{
+            header("Content-Type: application/download");
+            header('Content-Disposition: filename =' .$filename);
+            readfile($file);
+          } ?>
   <?php }
   ?>
   </div>
