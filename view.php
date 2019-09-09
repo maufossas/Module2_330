@@ -33,6 +33,7 @@ switch(pathinfo($file, PATHINFO_EXTENSION)) {
 <html>
   <?php require "./header.php" ?>
 <body>
+<h1 class="view"> Here is what we found: </h1>
 <div class="border">
   <?php if ($filetype == "text") { ?>
     <pre><?php echo htmlspecialchars(file_get_contents($file)); ?></pre>

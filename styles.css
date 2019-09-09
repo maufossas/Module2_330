@@ -10,23 +10,39 @@ input[type="number"]{height: 12px;}
 input[type="submit"] {border: none;
     color:rgb(128, 0, 0);
     background-color: rgb(255,218,185);
-    padding: 16px 32px;
-    margin: 4px 2px;
+    padding: 10px 16px;
+    margin: 4px 4px;
     text-decoration: none;
     cursor: pointer;
-    font-size: 14pt;}
+    font-size: 14pt;
+    border: 2px solid black;
+    border-radius: 4px;}
 input[type="file"] {border: none;
-    color:yellow;
-    background-color: blue;
-    padding: 16px 32px;
+    width: 170px;
+    color:rgb(128, 0, 0);
+    background-color: rgb(255,218,185);
+    padding: 10px 16px;
     text-decoration: none;
     margin: 4px 2px;
-    cursor: pointer;}
-input[type="text"]{font-size: 24pt;}
+    cursor: pointer;
+    font-size: 10pt;
+    border: 2px solid black;
+    border-radius: 4px;}
+input[type="text"]{font-size: 24pt;
+    border: 1px solid black;
+    border-radius: 6px;}
 input[type="radio"] {cursor: grabbing;}
-div.border{border-style: solid;
-    border-color: rgb(255,218,185);}
+div.border{border: 2px solid rgb(255,218,185);
+    border-radius: 4px;
+    padding: 8px 8px 8px 8px;}
 form.inline{display: inline-block;}
 ul {list-style-type: circle;}
-a {font-size: 24pt;}
-label{font-size: 24pt;}
+a.logout {font-size: 16pt;
+float: right;}
+a{font-size: 24pt;}
+label{font-size: 24pt;
+text-align: center;}
+h1.login{font-size: 30pt;
+text-align: center;}
+h1.view{font-size: 20pt;
+text-align: center;}

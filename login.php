@@ -21,6 +21,7 @@ if (!empty($_POST)) {
 <html lang="en">
   <?php include "./header.php" ?>
   <body>
+    <h1 class=login>Welcome to your file sharing website. Please enter a valid user to be able to view files.</h1>
     <form action=<?php echo $_SERVER["PHP_SELF"];?> method="POST">
       <label>Enter username: <input type="text" name="user"> </label>
       <input type="submit">

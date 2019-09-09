@@ -41,7 +41,8 @@ $files = array_slice(scandir("/var/simplefileserver/$user"), 2);
 <html lang="en">
   <?php include "./header.php" ?>
   <body>
-    <a href="./login.php">Logout</a>
+  <a class=logout href="./login.php">Logout</a>
+    <h1>Hello! Here you may upload, delete, view or send a file to ix.io</h1>
     <!--
          NOTE FOR GRADER:
          We have not simply ignored the instruction to destroy the session.
